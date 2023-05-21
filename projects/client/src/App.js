@@ -15,7 +15,7 @@ function App() {
 
   let getData = async () => {
     try {
-      let response = await axios.get('http://localhost:5000/food/allFood')
+      let response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/food/allFood`)
       setAllMenu(response.data.data)
     } catch (error) {
     }
@@ -23,7 +23,7 @@ function App() {
 
   let getDataCart = async () => {
     try {
-      let response = await axios.get('http://localhost:5000/cart/dataCart')
+      let response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/cart/dataCart`)
       setDataCart(response.data.data)
 
       let priceCart = 0

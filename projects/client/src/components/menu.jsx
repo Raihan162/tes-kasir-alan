@@ -39,7 +39,7 @@ export default function Menu(props) {
                                             <tr className="odd:bg-gray-50">
                                                 <td className="text-center">{index + 1}</td>
                                                 <td>{`${value.name}`}</td>
-                                                <td><img src={`http://localhost:5000/Public/images/${value.picture}`} className="w-[150px] h-[100px] object-cover rounded" /></td>
+                                                <td><img src={`${process.env.REACT_APP_IMAGE_URL}Public/images/${value.picture}`} className="w-[150px] h-[100px] object-cover rounded" /></td>
                                                 <td>{`Rp ${value.price.toLocaleString()}`}</td>
                                             </tr>
                                         )

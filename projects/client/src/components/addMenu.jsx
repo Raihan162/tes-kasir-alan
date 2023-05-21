@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 import axios from "axios"
 
 export default function AddMenu() {
-    
+
     let navigate = useNavigate()
 
     const [photoFood, setPhotoFood] = useState([])
@@ -38,14 +38,14 @@ export default function AddMenu() {
             fd.append('images', photoFood[0])
             fd.append('data', JSON.stringify({ name: dataFood.name, price: dataFood.price }))
 
-            let data = await axios.post(`http://localhost:5000/food/addFood`, fd)
+            let data = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/food/addFood`, fd)
             console.log(data)
             navigate(-1)
         } catch (error) {
             console.log(error)
         }
     }
-    
+
     return (
         <>
             <div className="py-10 px-28">

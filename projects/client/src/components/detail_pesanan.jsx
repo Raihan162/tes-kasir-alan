@@ -52,7 +52,7 @@ export default function DetailOrder(props) {
                                                 <tr>
                                                     <td>{index + 1}</td>
                                                     <td>{`${value.food.name} x ${value.qty}`}</td>
-                                                    <td><img src={`http://localhost:5000/Public/images/${value.food.picture}`} className="w-[150px] h-[100px] object-cover rounded" /></td>
+                                                    <td><img src={`${process.env.REACT_APP_IMAGE_URL}Public/images/${value.food.picture}`} className="w-[150px] h-[100px] object-cover rounded" /></td>
                                                     <td>{`Rp ${(value.qty * value.food.price).toLocaleString()}`}</td>
                                                 </tr>
                                             )

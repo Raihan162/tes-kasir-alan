@@ -11,7 +11,7 @@ export default function Cart(props) {
 
     let addToCart = async (input) => {
         try {
-            await axios.post('http://localhost:5000/cart/addCart', {
+            await axios.post(`${process.env.REACT_APP_BACKEND_URL}/cart/addCart`, {
                 food_id: input
             })
             props.func.getDataCart()
@@ -22,7 +22,7 @@ export default function Cart(props) {
 
     let deleteCart = async () => {
         try {
-            await axios.delete('http://localhost:5000/cart/delete')
+            await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/cart/delete`)
             props.func.getDataCart()
         } catch (error) {
 
