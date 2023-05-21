@@ -1,7 +1,7 @@
 require("dotenv").config()
 const mysql = require("mysql2")
 
-const urlDB = `mysql://root:422zPID5n7fCxbaGEnS4@containers-us-west-100.railway.app:5603/railway`
+const urlDB = `mysql://${process.env.MYSQLUSER}:${process.env.MYSQLPASSWORD}@${process.env.MYSQLHOST}:${process.env.MYSQLPORT}/${process.env.MYSQLDATABASE}`
 
 const connection = mysql.createConnection(urlDB)
 
